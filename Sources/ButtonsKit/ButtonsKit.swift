@@ -1,4 +1,4 @@
-struct ButtonsKit {
+public struct ButtonsKit {
     var text = "Hello, World!"
     var text2 = "Yooooo worlds"
     var text3 = "Yooooo worldsdfs"
@@ -6,11 +6,11 @@ struct ButtonsKit {
 }
 
 
-struct CanYouSeeThisStruct {
+public struct CanYouSeeThisStruct {
     var text = "Can You?"
     var text2 = "Can You??"
 }
 
-struct ButtonsKitTest {
+public struct ButtonsKitTest {
     var text = "Yo"
 }
