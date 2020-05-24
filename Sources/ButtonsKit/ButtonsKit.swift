@@ -22,7 +22,7 @@ public class Button: UIView {
 
     
     
-    convenience init(frame: CGRect, text: String) {
+    public convenience init(frame: CGRect, text: String) {
     
         self.init()
         self.frame = frame
