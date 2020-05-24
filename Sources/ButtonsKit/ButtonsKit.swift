@@ -1,3 +1,5 @@
+import UIKit
+
 public struct ButtonsKit {
     var text = "Hello, World!"
     var text2 = "Yooooo worlds"
@@ -13,4 +15,20 @@ public struct CanYouSeeThisStruct {
 
 public struct ButtonsKitTest {
     var text = "Yo"
+}
+
+
+public class Button: UIView {
+
+    
+    
+    convenience init(frame: CGRect, text: String) {
+    
+        self.init()
+        self.frame = frame
+        
+        print("frame: \(frame) text: \(text)")
+    
+    }
+
 }
