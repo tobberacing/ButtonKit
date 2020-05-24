@@ -1,3 +1,3 @@
 # ButtonsKit
 
-A description of this package.
+An easy to use collection of buttons for both designers and iOS developers.
