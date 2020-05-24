@@ -6,6 +6,10 @@ struct ButtonsKit {
 }
 
 
+struct CanYouSeeThisStruct {
+    var text = "Can You?"
+}
+
 struct ButtonsKitTest {
     var text = "Yo"
 }
