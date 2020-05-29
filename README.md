@@ -220,3 +220,17 @@ let defaultButton = Button(width: 200, text: "Refresh", color: nil, style: nil, 
 
 defaultButton.iconImage = UIImage(named: "Refresh white")
 ````
+
+![Available button styles](/Documentation/9.png)
+
+To create a destructive button, set the `isDestructive` to `true`.
+
+````
+let defaultButton = Button(width: 200, text: "Delete", color: nil, style: nil, size: nil) {
+
+    print("didSelect")
+
+}
+
+defaultButton.isDestructive = true
+````
