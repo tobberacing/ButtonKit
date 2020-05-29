@@ -234,3 +234,41 @@ let defaultButton = Button(width: 200, text: "Delete", color: nil, style: nil, s
 
 defaultButton.isDestructive = true
 ````
+
+
+# Global Settings
+
+
+To keep coherent styling across all buttons in your project, some settings are defined as `static`. This includes fonts, destructive color and iconSize. Tweak these values as you guys see fit.
+
+````
+static public var destructiveColor = UIColor(hex: "FB0002")
+static public var destructiveTextColor = UIColor(hex: "FFFFFF")
+
+static public let regularFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+static public let smallFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+
+static public let regularDetailFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+static public let smallDetailFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
+static public let regularCenterredDetailFont = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
+static public let smallCenterredDetailFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
+
+static public let iconSize = CGSize(width: 30, height: 30)
+````
+
+A default color can be set per-button. It will be used for text, fill and borders when no values have been explicitly set.
+
+````
+public var defaultColor = UIColor(hex: "293440") // overridable in instances by setting individual colors
+````
+
+
+Sizes can be changed across all buttons in your project by tweaking the `Size` enum values.
+
+````
+public enum Size: CGFloat {
+
+    case regular = 50.0 // Change to update regular height
+    case small = 40.0 // Change to update small height
+}
+````
