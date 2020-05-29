@@ -1,6 +1,6 @@
 # Buttons Kit by 44
 
-An easy to use collection of buttons for both designers and iOS developers. As a designer you get a Sketch document with symbols for the most common button variations. As a developer you get a toolkit written in Swift that supports the most common modern UI patterns. Since both designers and developers gets editable versions (symbols and code), you can view this kit as a starting point for further developmenr through your own extensions, should you want to. 
+An easy to use collection of buttons for both designers and iOS developers. As a designer you get a Sketch document with symbols for the most common button variations. As a developer you get a toolkit written in Swift that supports the most common modern UI patterns. Since both designers and developers gets editable versions (symbols and code), you can view this kit as a starting point for further development through your own extensions, should you want to. 
 
 
 
