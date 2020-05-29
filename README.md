@@ -86,11 +86,11 @@ There are two sizes, regular and small. The “isSmallSize” property creates a
 
 The default heights are 50 and 40 points. In case your designer wants to change those values, you can make the changes in the size enum. All buttons in the project will adjust their frame height.
 
-'''public enum Size: CGFloat {
+'public enum Size: CGFloat {
 
     case regular = 50.0 // Change to update regular height
     case small = 40.0 // Change to update small height
-}'''
+}'
 
 
 ## Getting the Code
