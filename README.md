@@ -14,14 +14,14 @@ The symbols include designs for four different styles, with five different layou
 
 ## Styles
 
-![Available button styles](/documentation/1.png)
+![Available button styles](/Documentation/1.png)
 
 Buttons come in four main styles. A primary filled version, a secondary bordered, a plain with only text and a destructive one.
 
 
 ## Layouts
 
-![Available button styles](/documentation/2.png)
+![Available button styles](/Documentation/2.png)
 
 Each style supports five different layouts for different purposes. Two for additional detail, one with an icon and a spinner state.
 
@@ -61,7 +61,7 @@ These parameters makes this button class highly customisable.
 
 ## Styles
 
-![Available button styles](/documentation/1.png)
+![Available button styles](/Documentation/1.png)
 
 * **Primary** Requries no action in IB, instantiate with nil for the style parameter programmatically.
 
@@ -76,7 +76,7 @@ These parameters makes this button class highly customisable.
 
 ## Layouts
 
-![Available button styles](/documentation/2.png)
+![Available button styles](/Documentation/2.png)
 
 * **regular** The default layout. 
 
@@ -91,7 +91,7 @@ These parameters makes this button class highly customisable.
 
 ## Sizes
 
-![Available button styles](/documentation/3.png)
+![Available button styles](/Documentation/3.png)
 
 There are two sizes, regular and small. The `isSmallSize` property creates a small sized button. Either through Interface Builder or programmatically. 
 
@@ -136,7 +136,7 @@ defaultButton.selectionDelegate = self
 
 # Getting the Code
 
-![Available button styles](/documentation/4.png)
+![Available button styles](/Documentation/4.png)
 
 The code comes in a Swift Package. In Xcode, select `File` -> `Swift Packages` -> `Add Packade Depency…`
 
