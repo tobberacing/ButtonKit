@@ -105,6 +105,32 @@ public enum Size: CGFloat {
 }
 ````
 
+## Adding an action
+
+Actions can be implemented either by using the 'selectionBlock' or by setting a delegate. Blocks are the recommended easiest way.
+
+````
+defaultButton.selectionBlock = {
+
+    print("did tap button")
+}
+````
+
+Implementing the 'ButtonSelectionDelegate' protocol and set the 'selectionDelegate' property on the button.
+
+````
+extension ViewController: ButtonSelectionDelegate {
+
+    func didTapButton(_ button: Button) {
+        
+        print("didTapButton")
+    }
+}
+````
+
+````
+defaultButton.selectionDelegate = self
+````
 
 
 
