@@ -156,13 +156,15 @@ sd
 
 ![Available button styles](/Documentation/5.png)
 
+For a simple button with regular size and regular layout, only a width is needed to init. `text`, `selectionBlock` and other parameters can be set later.
+
 ````
 let defaultButton = Button(width: 200, color: nil, style: nil, size: nil)
 
 defaultButton.text = "Done"
 ````
 
-For a simple button with regular size and regular layout, only a width is needed to init. `text`, `selectionBlock` and other parameters can be set later.
+A quicker init function lets you specify both `text` and the `selectionBlock` at creation. This lets you create a more complete button, with one line of code, that still allows a lot of flexibility.  
 
 ````
 let defaultButton = Button(width: 200, text: "Done", color: nil, style: nil, size: nil) {
@@ -172,7 +174,7 @@ let defaultButton = Button(width: 200, text: "Done", color: nil, style: nil, siz
 }
 ````
 
-A quicker init function lets you specify both `text` and the `selectionBlock` at creation. This lets you create a more complete button, with one line of code, that still allows a lot of flexibility.  
+
 
 ![Available button styles](/Documentation/6.png)
 
