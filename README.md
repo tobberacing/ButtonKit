@@ -150,3 +150,71 @@ This will download and add the source code to your project in a `ButtonsKit` mod
 
 
 # Examples
+
+
+sd
+
+![Available button styles](/Documentation/5.png)
+
+````
+let defaultButton = Button(width: 200, color: nil, style: nil, size: nil)
+
+defaultButton.text = "Done"
+````
+
+For a simple button with regular size and regular layout, only a width is needed to init. `text`, `selectionBlock` and other parameters can be set later.
+
+````
+let defaultButton = Button(width: 200, text: "Done", color: nil, style: nil, size: nil) {
+
+    print("didSelect")
+
+}
+````
+
+A quicker init function lets you specify both `text` and the `selectionBlock` at creation. This lets you create a more complete button, with one line of code, that still allows a lot of flexibility.  
+
+![Available button styles](/Documentation/6.png)
+
+To turn this regular layout into one with a detail text in left/right layout, set the `detailText` property.
+
+````
+let defaultButton = Button(width: 200, text: "Publish", color: nil, style: nil, size: nil) {
+
+    print("didSelect")
+
+}
+
+defaultButton.detailText = "Global"
+````
+
+
+![Available button styles](/Documentation/7.png)
+
+To create a button with detail text but a centerred layout, also set the `isCenterred` property.
+
+````
+let defaultButton = Button(width: 200, text: "Purchase", color: nil, style: nil, size: nil) {
+
+    print("didSelect")
+
+}
+
+defaultButton.detailText = "30 days free trial"
+defaultButton.isCenterred = true
+````
+
+
+![Available button styles](/Documentation/8.png)
+
+To create a button with an icon and left/right layout, set the `iconImage` with a `UIImage` object.
+
+````
+let defaultButton = Button(width: 200, text: "Refresh", color: nil, style: nil, size: nil) {
+
+    print("didSelect")
+
+}
+
+defaultButton.iconImage = UIImage(named: "Refresh white")
+````

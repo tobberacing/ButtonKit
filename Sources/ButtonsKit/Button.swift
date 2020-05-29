@@ -122,6 +122,20 @@ public class Button: UIView {
     
         self.init()
         
+        self.didInit(width: width, text: nil, color: color, style: style, size: size, block: nil)
+    }
+    
+    public convenience init(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?) {
+    
+        self.init()
+        
+        self.didInit(width: width, text: text, color: color, style: style, size: size, block: block)
+    }
+    
+    private func didInit(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?) {
+    
+        self.text = text ?? ""
+        
         if style == .border { self.isBordered = true }
         if style == .plain { self.isPlain = true }
         if style == .destructive { self.isDestructive = true }
@@ -132,6 +146,7 @@ public class Button: UIView {
         self.backgroundColor = defaultColor
         
         self.frame.size.width = width
+        self.selectionBlock = block
         
         self.updateViews()
     }
