@@ -32,7 +32,9 @@ The kit comes in a Swift Package with a single class that supports all variation
 
 Instantiate a button to your project either by placing a view in Interface Builder and changing its class to “Button”. Or programmatically through 👇
 
-'''public convenience init(width: CGFloat, color: UIColor?, style: Button.Style?, size: Button.Size?)'''
+````
+public convenience init(width: CGFloat, color: UIColor?, style: Button.Style?, size: Button.Size?)
+````
 
 You can edit the appearance of buttons either directly in Interface Builder or programmatically. The things you can tweak include the following 👇
 
@@ -86,11 +88,13 @@ There are two sizes, regular and small. The “isSmallSize” property creates a
 
 The default heights are 50 and 40 points. In case your designer wants to change those values, you can make the changes in the size enum. All buttons in the project will adjust their frame height.
 
-'public enum Size: CGFloat {
+````
+public enum Size: CGFloat {
 
     case regular = 50.0 // Change to update regular height
     case small = 40.0 // Change to update small height
-}'
+}
+````
 
 
 ## Getting the Code
