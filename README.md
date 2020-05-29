@@ -36,7 +36,7 @@ Download the Sketch file to get started.
 
 The kit comes in a Swift Package with a single class that supports all variations of the design. All code can be edited as you see fit, so implementing tweaks should be straightforward.
 
-Instantiate a button to your project either by placing a view in Interface Builder and changing its class to “Button”. Or programmatically through 👇
+Instantiate a button to your project either by placing a view in Interface Builder and changing its class to `Button`. Or programmatically through 👇
 
 ````
 public convenience init(width: CGFloat, color: UIColor?, style: Button.Style?, size: Button.Size?)
@@ -65,11 +65,11 @@ These parameters makes this button class highly customisable.
 
 * **Primary** Requries no action in IB, instantiate with nil for the style parameter programmatically.
 
-* **Secondary** Set the “isBordered”* property to true in IB or instantiate with the bordered style programmatically.
+* **Secondary** Set the `isBordered`* property to true in IB or instantiate with the bordered style programmatically.
 
-* **Plain** Set the “isPlain”* property to true in IB or instantiate with the plain style programmatically.
+* **Plain** Set the `isPlain`* property to true in IB or instantiate with the plain style programmatically.
 
-* **Destructive** Set the “isDestructive”* property to true in IB or instantiate with the destructive style programmatically.
+* **Destructive** Set the `isDestructive`* property to true in IB or instantiate with the destructive style programmatically.
 
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
 
@@ -80,22 +80,22 @@ These parameters makes this button class highly customisable.
 
 * **regular** The default layout. 
 
-* **detailRight** Set the detailText property in either IB or programmatically.
+* **detailRight** Set the `detailText` property in either IB or programmatically.
 
-* **detailCenter** Set the detailText property and the “isCenterred” property to true in either IB or programmatically.
+* **detailCenter** Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
 
-* **Icon** Specifying an icon image overrides the detail text. Set in either IB or programmatically.
+* **Icon** Specifying an icon image overrides `detailText`. Set in either IB or programmatically.
 
-* **Spinner** Call “startSpinner()” to enter spinner mode. “stopSpinner()” cancels.
+* **Spinner** Call `startSpinner()` to enter spinner mode. `stopSpinner()` cancels.
 
 
 ## Sizes
 
 ![Available button styles](Documentation/3.png)
 
-There are two sizes, regular and small. The “isSmallSize” property creates a small sized button. Either through Interface Builder or programmatically. 
+There are two sizes, regular and small. The `isSmallSize` property creates a small sized button. Either through Interface Builder or programmatically. 
 
-The default heights are 50 and 40 points. In case your designer wants to change those values, you can make the changes in the size enum. All buttons in the project will adjust their frame height.
+The default heights are `50` and `40` points. In case your designer wants to change those values, you can make the changes in the `Size` enum. All buttons in the project will adjust their frame height.
 
 ````
 public enum Size: CGFloat {
@@ -107,7 +107,7 @@ public enum Size: CGFloat {
 
 ## Adding an action
 
-Actions can be implemented either by using the 'selectionBlock' or by setting a delegate. Blocks are the recommended easiest way.
+Actions can be implemented either by using the `selectionBlock` or by setting a delegate. Blocks are the recommended easiest way.
 
 ````
 defaultButton.selectionBlock = {
@@ -116,7 +116,7 @@ defaultButton.selectionBlock = {
 }
 ````
 
-Implementing the 'ButtonSelectionDelegate' protocol and set the 'selectionDelegate' property on the button.
+Implementing the `ButtonSelectionDelegate` protocol and set the `selectionDelegate` property on the button.
 
 ````
 extension ViewController: ButtonSelectionDelegate {
@@ -138,13 +138,13 @@ defaultButton.selectionDelegate = self
 
 ![Available button styles](Documentation/4.png)
 
-The code comes in a Swift Package. In Xcode, select File -> Swift Packages -> Add Packade Depency…
+The code comes in a Swift Package. In Xcode, select `File` -> `Swift Packages` -> `Add Packade Depency…`
 
 The Package Repository is located at 👇
 
 `https://github.com/tobberacing/ButtonsKit.git`
 
-This will download and add the source code to your project in a “ButtonsKit” module.
+This will download and add the source code to your project in a `ButtonsKit` module.
 
 
 
