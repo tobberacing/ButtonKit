@@ -3,19 +3,23 @@
 An easy to use collection of buttons for both designers and iOS developers. As a designer you get a Sketch document with symbols for the most common button variations. As a developer you get a toolkit written in Swift that supports the most common modern UI patterns. Since both designers and the developers gets editable versions (symbols and code), you can view this kit as a starting point for further developmen through your own extensions. 
 
 
-## Designers
+
+
+# Designers
 
 The Sketch file contains symbols for primary, secondary, plain and destructive buttons, ready to be thrown in to your project, resting assured that your developers won’t need to build anything from scratch.
 
 The symbols include designs for four different styles, with five different layouts and two sizes each. All buttons include a spinner state.
 
-### Styles
+
+## Styles
 
 ![Available button styles](Documentation/1.png)
 
 Buttons come in four main styles. A primary filled version, a secondary bordered, a plain with only text and a destructive one.
 
-### Layouts
+
+## Layouts
 
 ![Available button styles](Documentation/2.png)
 
@@ -26,7 +30,9 @@ View the Sketch symbols either as a complete package, or as a starting point. It
 Download the Sketch file to get started.
 
 
-## Developers
+
+
+# Developers
 
 The kit comes in a Swift Package with a single class that supports all variations of the design. All code can be edited as you see fit, so implementing tweaks should be straightforward.
 
@@ -52,7 +58,8 @@ You can edit the appearance of buttons either directly in Interface Builder or p
 
 These parameters makes this button class highly customisable.
 
-### Styles
+
+## Styles
 
 ![Available button styles](Documentation/1.png)
 
@@ -66,7 +73,8 @@ These parameters makes this button class highly customisable.
 
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
 
-### Layouts
+
+## Layouts
 
 ![Available button styles](Documentation/2.png)
 
@@ -80,7 +88,8 @@ These parameters makes this button class highly customisable.
 
 * **Spinner** Call “startSpinner()” to enter spinner mode. “stopSpinner()” cancels.
 
-### Sizes
+
+## Sizes
 
 ![Available button styles](Documentation/3.png)
 
@@ -97,7 +106,9 @@ public enum Size: CGFloat {
 ````
 
 
-## Getting the Code
+
+
+# Getting the Code
 
 ![Available button styles](Documentation/4.png)
 
@@ -110,4 +121,6 @@ The Package Repository is located at 👇
 This will download and add the source code to your project in a “ButtonsKit” module.
 
 
-## Examples
+
+
+# Examples
