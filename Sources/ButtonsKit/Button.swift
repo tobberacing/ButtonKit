@@ -57,6 +57,9 @@ public class Button: UIView {
     
     static public let iconSize = CGSize(width: 30, height: 30)
     
+    static public var regularCornerRadius: CGFloat?
+    static public var smallCornerRadius: CGFloat?
+    
     
     // MARK: - Style Settings
     
@@ -197,7 +200,7 @@ public class Button: UIView {
         self.frame.size.height = size.rawValue
         self.layer.borderColor = updatedBorderColor.cgColor
         self.layer.borderWidth = borderWidth
-        self.layer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = updatedCornerRadius
         self.layer.masksToBounds = false
     }
     
@@ -442,6 +445,18 @@ public class Button: UIView {
     }
     
     
+    // MARK: - Corner Radius
+    
+    
+    private var updatedCornerRadius: CGFloat {
+    
+        if let cornerRadius = Button.regularCornerRadius, size == .regular { return cornerRadius }
+        if let cornerRadius = Button.smallCornerRadius, size == .small { return cornerRadius }
+        
+        return cornerRadius
+    }
+    
+    
     // MARK: - Selections
     
     
@@ -561,7 +576,7 @@ public class Button: UIView {
         self.isDisplayingFeedback = true
         
         self.feedbackColorView = UIView(frame: bounds)
-        self.feedbackColorView!.layer.cornerRadius = cornerRadius
+        self.feedbackColorView!.layer.cornerRadius = updatedCornerRadius
         self.feedbackColorView!.layer.borderColor = updatedTextColor.cgColor
         self.feedbackColorView!.layer.borderWidth = 2
         self.feedbackColorView!.alpha = 1.00

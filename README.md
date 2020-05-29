@@ -239,7 +239,7 @@ defaultButton.isDestructive = true
 # Global Settings
 
 
-To keep coherent styling across all buttons in your project, some settings are defined as `static`. This includes fonts, destructive color and iconSize. Tweak these values as you guys see fit.
+To keep coherent styling across all buttons in your project, some settings are defined as `static`. This includes fonts, destructive color and iconSize. Corner radius will be overriden if a static property is set. Tweak these values as you guys see fit.
 
 ````
 static public var destructiveColor = UIColor(hex: "FB0002")
@@ -254,6 +254,9 @@ static public let regularCenterredDetailFont = UIFont.systemFont(ofSize: 12, wei
 static public let smallCenterredDetailFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
 
 static public let iconSize = CGSize(width: 30, height: 30)
+
+static public let regularCornerRadius: CGFloat?
+static public let smallCornerRadius: CGFloat?
 ````
 
 A default color can be set per-button. It will be used for text, fill and borders when no values have been explicitly set.
@@ -261,7 +264,6 @@ A default color can be set per-button. It will be used for text, fill and border
 ````
 public var defaultColor = UIColor(hex: "293440") // overridable in instances by setting individual colors
 ````
-
 
 Sizes can be changed across all buttons in your project by tweaking the `Size` enum values.
 
