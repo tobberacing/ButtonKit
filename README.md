@@ -108,10 +108,10 @@ Set the `detailText` property in either IB or programmatically.
 Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
 
 ### Icon
-Specifying an icon image overrides `detailText`. Set in either IB or programmatically.
+Specify an icon image with a `UIImage` object. This overrides any `detailText`. Set it in either IB or programmatically.
 
 ### Spinner
-Call `startSpinner()` to enter spinner mode. `stopSpinner()` cancels.
+Call `startSpinner()` to enter spinner mode. `stopSpinner()` exits.
 
 
 ## Sizes
