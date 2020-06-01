@@ -130,7 +130,7 @@ public enum Size: CGFloat {
 }
 ````
 
-## 4 .Adding an action
+## 4. Adding an action
 
 Actions can be implemented either by using the `selectionBlock` or by setting a delegate. Blocks are the recommended easiest way.
 
