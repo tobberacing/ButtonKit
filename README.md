@@ -36,7 +36,7 @@ Buttons come in four main styles. A primary filled version, a secondary bordered
 
 Each style supports five different layouts for different purposes. Two for additional detail, one with an icon and a spinner state.
 
-View the Sketch symbols either as a complete package, or as a starting point. It’s up to you guys. Since the developer gets all the source code, any tweaks you make to the designs will be easy to implement into code.
+View the Sketch symbols either as a complete package, or as a starting point. It’s up to you guys. Since the developer gets all the source code, any tweaks you make to the designs will be pretty easy to implement in code.
 
 Download the Sketch file to get started.
 
@@ -45,15 +45,20 @@ Download the Sketch file to get started.
 
 # Developers
 
-The kit comes in a Swift Package with a single class that supports all variations of the design. All code can be edited as you see fit, so implementing tweaks should be straightforward.
+The kit comes in a Swift Package with a single class that supports all variations of the design. Since you get all the source code, you can implement any tweaks you need.
 
-Instantiate a button to your project either by placing a view in Interface Builder and changing its class to `Button`. Or programmatically through 👇
+Instantiate a button to your project either by placing a view in Interface Builder and changing its class to `Button`, or programmatically through 👇
 
 ````
 public convenience init(width: CGFloat, color: UIColor?, style: Button.Style?, size: Button.Size?)
 ````
+or the quicker convenience init👇 
 
-You can edit the appearance of buttons either directly in Interface Builder or programmatically. The things you can tweak include the following 👇
+````
+public convenience init(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?)
+````
+
+You can edit the appearance of buttons either directly in Interface Builder or programmatically. The things you can tweak include 👇
 
 * Text (duh)
 * Detail text
@@ -67,7 +72,7 @@ You can edit the appearance of buttons either directly in Interface Builder or p
 * Style - Filled, bordered, plain or destructive
 * Layout - Regular, detail in center, detail to the right, icon
 
-These parameters makes this button class highly customisable.
+These parameters makes the `Button` class highly customisable.
 
 
 ## Styles
