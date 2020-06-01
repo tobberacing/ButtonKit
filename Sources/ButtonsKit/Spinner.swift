@@ -110,7 +110,7 @@ public class Spinner: UIView {
 
 class Circle: UIView {
 
-    public var fillColor: UIColor?
+    public var fillColor: UIColor? { didSet { self.setNeedsDisplay() } }
     
     
     convenience init(diameter: CGFloat, center: CGPoint, fill: UIColor) {

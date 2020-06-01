@@ -3,6 +3,17 @@
 An easy to use collection of buttons for both designers and iOS developers. As a designer you get a Sketch document with symbols for the most common button variations. As a developer you get a toolkit written in Swift that supports the most common modern UI patterns. Since both designers and developers gets editable versions (symbols and code), you can view this kit as a starting point for further development through your own extensions, should you want to. 
 
 
+# Quick-start guide
+
+## For Designers
+
+- Download the Sketch file
+- Add buttons as symbols to your Sketch documents
+
+## For Developers
+
+- Add the Swift Package dependency through Xcode from `https://github.com/tobberacing/ButtonsKit.git`
+- Use the `Button` class either through IB or programmatically 
 
 
 # Designers
