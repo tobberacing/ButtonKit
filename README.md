@@ -41,6 +41,14 @@ View the Sketch symbols either as a complete package, or as a starting point. It
 Download the Sketch file to get started.
 
 
+## 3. Sizes
+
+![Available button styles](/Documentation/3.png)
+
+There are two sizes, regular and small. It's generally a good idea to keep two distinct button sizes. Of course you can tweak the size as you see fit, and your developer can easily update the height of the 'Regular' and 'Small' size. You could also add a third size should you choose to, and your developer will be able to implement that easily too. 
+
+The default heights are `50` and `40` points.
+
 
 
 # Developers
