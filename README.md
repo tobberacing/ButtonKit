@@ -138,7 +138,7 @@ public enum Size: CGFloat {
 }
 ````
 
-To implement a third size, simply add another case, for example `mini` with `30` as value.
+To implement a third size, simply add another case, for example `mini` with `30` as value. Just note that this won't be supported in Interface Builder, only programmatically.
 
 
 ## 4. Adding an action
