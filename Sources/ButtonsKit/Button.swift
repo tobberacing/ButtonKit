@@ -9,10 +9,6 @@ import Foundation
 import UIKit
 
 
-// 5. Make an iPad view with same variations as in Sketch, make a GIF
-// 6.
-
-
 @available(iOS 12.0, *)
 @objc public protocol ButtonSelectionDelegate: class {
 
@@ -34,7 +30,7 @@ public class Button: UIView {
     private var isDisplayingFeedback: Bool = false
     private var feedbackColorView: UIView?
     
-    @IBOutlet public var selectionDelegate: ButtonSelectionDelegate?
+    @IBOutlet public weak var selectionDelegate: ButtonSelectionDelegate?
     
     private var debugMode: Bool = false
     
@@ -250,104 +246,133 @@ public class Button: UIView {
     }
     
     
-    // MARK: - Detail Text
+    // MARK: - Deinit
     
     
+    deinit {
+    
+        self.selectionDelegate = nil
+        self.selectionBlock = nil
+    
+    }
+
+}
+
+
+// MARK: - Detail Text
+
+
+extension Button {
+
     public func setDetailText(_ detailText: String) {
     
         //print("setDetailText: \(detailText)")
     }
-    
-    
-    // MARK: - Label Layout
-    
-    
+}
+
+
+
+// MARK: - Label Layout
+
+
+extension Button {
+
     private var labelFrame: CGRect {
-    
+
         if layout == .icon { return CGRect(x: edgePadding, y: 0, width: bounds.midX, height: bounds.height) }
         if layout == .detailRight { return CGRect(x: edgePadding, y: 0, width: bounds.midX, height: bounds.height) }
         if layout == .detailCenter { return CGRect(x: edgePadding, y: 0, width: bounds.width - edgePadding*2, height: bounds.height * 0.7) }
         
         return self.bounds.insetBy(dx: edgePadding, dy: 0)
     }
-    
+
     private var labelAlignment: NSTextAlignment {
-    
+
         if layout == .icon { return .left }
         if layout == .detailRight { return .left }
         if layout == .detailCenter { return .center }
         
         return .center
     }
-    
+
     private var labelRezising: AutoresizingMask {
-    
+
         if layout == .icon { return [.flexibleWidth, .flexibleHeight, .flexibleRightMargin] }
         if layout == .detailRight { return [.flexibleWidth, .flexibleHeight, .flexibleRightMargin] }
         if layout == .detailCenter { return [.flexibleWidth, .flexibleHeight] }
         
         return [.flexibleWidth, .flexibleHeight]
     }
-    
-    
-    // MARK: - Detail Label Layout
-    
-    
+}
+
+
+// MARK: - Detail Label Layout
+
+
+extension Button {
+
     private var detailFrame: CGRect {
-    
+
         if layout == .detailCenter { return CGRect(x: edgePadding, y: bounds.height * 0.36, width: bounds.width - edgePadding*2, height: bounds.height * 0.64) }
         
         let padding = size == .small ? edgePadding/1.50 : edgePadding
         
         return CGRect(x: bounds.midX, y: 0, width: bounds.midX - padding, height: bounds.height)
     }
-    
+
     private var detailAlignment: NSTextAlignment {
-    
+
         if layout == .detailCenter { return .center }
         
         return .right
     }
-    
+
     private var detailRezising: AutoresizingMask {
-    
+
         if layout == .detailCenter { return [.flexibleWidth, .flexibleHeight] }
         
         return [.flexibleWidth, .flexibleHeight, .flexibleLeftMargin]
     }
-    
+
     private var isDetailHidden: Bool {
-    
+
         return detailText == nil || !isImageHidden
     }
-    
-    
-    // MARK: - Image Layout
-    
-    
+}
+
+
+// MARK: - Image Layout
+
+
+extension Button {
+
     private var imageFrame: CGRect {
-    
+
         let padding = size == .small ? edgePadding/2 : edgePadding
         let iconSize = size == .small ? CGSize(width: Button.iconSize.width * 0.8, height: Button.iconSize.height * 0.8) : Button.iconSize
         
         return CGRect(x: bounds.width - iconSize.width - padding, y: (bounds.height - iconSize.height)/2, width: iconSize.width, height: iconSize.height)
     }
-    
+
     private var imageRezising: AutoresizingMask {
-    
+
         return [.flexibleLeftMargin, .flexibleTopMargin, .flexibleBottomMargin]
     }
-    
+
     private var isImageHidden: Bool {
-    
+
         return iconImage == nil
     }
-    
-    // MARK: - Colors
-    
-    
+}
+
+
+// MARK: - Colors
+
+
+extension Button {
+
     private var updatedTextColor: UIColor {
-    
+
         if self.isDestructive, style == .border { return Button.destructiveColor }
         if self.isDestructive, style == .filled { return Button.destructiveTextColor }
         if self.isDestructive, style == .plain { return Button.destructiveColor }
@@ -362,9 +387,9 @@ public class Button: UIView {
         
         return defaultColor
     }
-    
+
     private var updatedBorderColor: UIColor {
-    
+
         if self.isDestructive { return Button.destructiveColor }
         
         if style == .border, let borderColor = borderColor { return borderColor }
@@ -372,9 +397,9 @@ public class Button: UIView {
         
         return UIColor.clear
     }
-    
+
     private var updatedBackgroundColor: UIColor {
-    
+
         if style == .border { return UIColor.clear }
         if style == .plain { return UIColor.clear }
         
@@ -382,97 +407,115 @@ public class Button: UIView {
         
         return backgroundColor ?? UIColor.clear
     }
-    
+
     var backdropColor: UIColor? {
-    
+
         return superview?.backgroundColor
     }
-    
-    
-    // MARK: - Size
-    
-    
+}
+
+
+// MARK: - Size
+
+
+extension Button {
+
     private var size: Button.Size {
-    
+
         if isSmallSize { return .small }
         
         return .regular
     }
-    
-    
-    // MARK: - Style
-    
-    
+}
+
+
+// MARK: - Style
+
+
+extension Button {
+
     private var style: Button.Style {
-    
+
         if self.isBordered { return .border }
         if self.isPlain { return .plain }
         
         return .filled
     }
-    
-    
-    // MARK: - Layout
-    
-    
+}
+
+
+// MARK: - Layout
+
+
+extension Button {
+
     private var layout: Button.Layout {
-    
+
         if let _ = iconImage { return .icon }
         if !isDetailHidden, isCenterred { return .detailCenter }
         if !isDetailHidden { return .detailRight }
         
         return .regular
     }
-    
-    
-    // MARK: - Font
-    
-    
+}
+
+
+// MARK: - Font
+
+
+extension Button {
+
     private var font: UIFont {
-    
+
         if self.size == .small { return Button.smallFont }
         
         return Button.regularFont
     }
-    
+
     private var detailFont: UIFont {
-    
+
         if self.size == .small, layout == .detailCenter { return Button.smallCenterredDetailFont }
         if self.size == .regular, layout == .detailCenter { return Button.regularCenterredDetailFont }
         if self.size == .small { return Button.smallDetailFont }
         
         return Button.regularDetailFont
     }
-    
-    
-    // MARK: - Corner Radius
-    
-    
+}
+
+
+// MARK: - Corner Radius
+
+
+extension Button {
+
     private var updatedCornerRadius: CGFloat {
-    
+
         if let cornerRadius = Button.regularCornerRadius, size == .regular { return cornerRadius }
         if let cornerRadius = Button.smallCornerRadius, size == .small { return cornerRadius }
         
         return cornerRadius
     }
-    
-    
-    // MARK: - Selections
-    
-    
+}
+
+
+// MARK: - Selections
+
+
+extension Button {
+
     @objc private func didTap() {
-    
+
         guard !self.spinner.isAnimating else { stopSpinner(); return }
         
         selectionDelegate?.didTapButton(self)
         selectionBlock?()
         
         startSpinner()
-    
+
     }
-    
+
     public func simulateTap() {
-    
+
         guard !self.spinner.isAnimating else { stopSpinner(); return }
         
         self.tapBegan()
@@ -483,68 +526,74 @@ public class Button: UIView {
         Dispatch.main(after: 0.100) {
             self.tapEnded()
         }
-    
+
     }
-    
-    
-    // MARK: - Spinner
-    
-    
+}
+
+
+// MARK: - Spinner
+
+
+extension Button {
+
     public func startSpinner() {
-    
+
         self.label.isHidden = true
         self.detailLabel.isHidden = true
         self.imageView.isHidden = true
         self.spinner.color = self.updatedTextColor
         self.spinner.startAnimating()
-    
+
     }
-    
+
     public func stopSpinner() {
-    
+
         self.label.isHidden = false
         self.detailLabel.isHidden = isDetailHidden
         self.imageView.isHidden = isImageHidden
         self.spinner.stopAnimating()
-    
+
     }
-    
-    
-    // MARK: - Touch Animation
-    
-    
+}
+
+
+// MARK: - Touch Feedback
+
+
+extension Button {
+
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
+
         super.touchesBegan(touches, with: event); self.tapBegan()
     }
-    
+
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         super.touchesCancelled(touches, with: event); tapEnded()
     }
-    
+
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         super.touchesEnded(touches, with: event); tapEnded()
     }
-    
+
     private func tapBegan() {
-    
+
         if style == .plain { colorFeedback(); return }
         
         self.scaleFeedback()
     }
-    
+
     private func tapEnded() {
-    
+
         if style == .plain { resetColor(); return }
         
         self.resetScale()
         
     }
-    
+
     func scaleFeedback() {
-    
+
         guard !isDisplayingFeedback else { return }
         
         self.defaultTransform = self.transform
@@ -556,9 +605,9 @@ public class Button: UIView {
         
         }, completion: nil)
     }
-    
+
     func resetScale() {
-    
+
         self.isDisplayingFeedback = false
         
         UIView.animate(withDuration: 1.000, delay: 0, options: [.allowUserInteraction, .curveEaseOut], animations: {
@@ -567,9 +616,9 @@ public class Button: UIView {
         
         }, completion: nil)
     }
-    
+
     func colorFeedback() {
-    
+
         guard !isDisplayingFeedback else { return }
         guard self.feedbackColorView == nil else { return }
         
@@ -583,9 +632,9 @@ public class Button: UIView {
         
         addSubview(feedbackColorView!)
     }
-    
+
     func resetColor() {
-    
+
         self.isDisplayingFeedback = false
         
         guard let view = feedbackColorView else { return }
@@ -598,15 +647,4 @@ public class Button: UIView {
         
         }, completion: nil)
     }
-    
-    
-    // MARK: - Init
-    
-    
-    deinit {
-    
-        self.selectionBlock = nil
-    
-    }
-
 }
