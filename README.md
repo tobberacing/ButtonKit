@@ -23,14 +23,14 @@ The Sketch file contains symbols for primary, secondary, plain and destructive b
 The symbols include designs for four different styles, with five different layouts and two sizes each. All buttons include a spinner state.
 
 
-## Styles
+## 1. Styles
 
 ![Available button styles](/Documentation/1.png)
 
 Buttons come in four main styles. A primary filled version, a secondary bordered, a plain with only text and a destructive one.
 
 
-## Layouts
+## 2. Layouts
 
 ![Available button styles](/Documentation/2.png)
 
@@ -75,7 +75,7 @@ You can edit the appearance of buttons either directly in Interface Builder or p
 These parameters makes the `Button` class highly customisable.
 
 
-## Styles
+## 1. Styles
 
 ![Available button styles](/Documentation/1.png)
 
@@ -94,7 +94,7 @@ Set the `isDestructive`* property to true in IB or instantiate with the destruct
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
 
 
-## Layouts
+## 2. Layouts
 
 ![Available button styles](/Documentation/2.png)
 
@@ -114,7 +114,7 @@ Specify an icon image with a `UIImage` object. This overrides any `detailText`. 
 Call `startSpinner()` to enter spinner mode. `stopSpinner()` exits.
 
 
-## Sizes
+## 3. Sizes
 
 ![Available button styles](/Documentation/3.png)
 
@@ -130,7 +130,7 @@ public enum Size: CGFloat {
 }
 ````
 
-## Adding an action
+## 4 .Adding an action
 
 Actions can be implemented either by using the `selectionBlock` or by setting a delegate. Blocks are the recommended easiest way.
 
