@@ -152,7 +152,7 @@ defaultButton.selectionBlock = {
 }
 ````
 
-Implementing the `ButtonSelectionDelegate` protocol and set the `selectionDelegate` property on the button.
+Set the `selectionDelegate` property on the button and implement the `ButtonSelectionDelegate` protocol to add a delegate for call-backs.
 
 ````
 extension ViewController: ButtonSelectionDelegate {
