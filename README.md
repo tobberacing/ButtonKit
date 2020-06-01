@@ -187,9 +187,6 @@ This will download and add the source code to your project in a `ButtonsKit` mod
 
 # Examples
 
-
-sd
-
 ![Available button styles](/Documentation/5.png)
 
 For a simple button with regular size and regular layout, only a width is needed to init. `text`, `selectionBlock` and other parameters can be set later.
