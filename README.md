@@ -79,13 +79,17 @@ These parameters makes the `Button` class highly customisable.
 
 ![Available button styles](/Documentation/1.png)
 
-* **Primary** Requries no action in IB, instantiate with nil for the style parameter programmatically.
+### Primary
+Requries no action in IB, instantiate with nil for the style parameter programmatically.
 
-* **Secondary** Set the `isBordered`* property to true in IB or instantiate with the bordered style programmatically.
+### Secondary
+Set the `isBordered`* property to true in IB or instantiate with the bordered style programmatically.
 
-* **Plain** Set the `isPlain`* property to true in IB or instantiate with the plain style programmatically.
+### Plain
+Set the `isPlain`* property to true in IB or instantiate with the plain style programmatically.
 
-* **Destructive** Set the `isDestructive`* property to true in IB or instantiate with the destructive style programmatically.
+### Destructive
+Set the `isDestructive`* property to true in IB or instantiate with the destructive style programmatically.
 
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
 
@@ -94,15 +98,20 @@ These parameters makes the `Button` class highly customisable.
 
 ![Available button styles](/Documentation/2.png)
 
-* **regular** The default layout. 
+### Regular
+The default layout. 
 
-* **detailRight** Set the `detailText` property in either IB or programmatically.
+### detailRight
+Set the `detailText` property in either IB or programmatically.
 
-* **detailCenter** Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
+### detailCenter
+Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
 
-* **Icon** Specifying an icon image overrides `detailText`. Set in either IB or programmatically.
+### Icon
+Specifying an icon image overrides `detailText`. Set in either IB or programmatically.
 
-* **Spinner** Call `startSpinner()` to enter spinner mode. `stopSpinner()` cancels.
+### Spinner
+Call `startSpinner()` to enter spinner mode. `stopSpinner()` cancels.
 
 
 ## Sizes
