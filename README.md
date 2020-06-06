@@ -6,6 +6,7 @@ The symbols in the Sketch document is designed to be copied into your project an
 
 
 
+
 # Quick-start guide
 
 ## As a Designer 👇
