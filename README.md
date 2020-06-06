@@ -232,3 +232,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ````
+
+
+# Getting the code
+
+The code comes in a Swift Package. In Xcode, select `File -> Swift Packages -> Add Packade Depency…`
+
+The Package Repository is located at 👇
+
+https://github.com/tobberacing/ButtonsKit.git
+
+This will download and add the source code to your project in a `ButtonKit` module.
