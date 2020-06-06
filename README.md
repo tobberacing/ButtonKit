@@ -80,17 +80,17 @@ Edit the appearance of buttons either directly in Interface Builder or programma
 
 # Styles
 
-PRIMARY
-Requries no action in IB, instantiate with `nil` for the style parameter programmatically.
+- PRIMARY
+- Requries no action in IB, instantiate with `nil` for the style parameter programmatically.
 
-SECONDARY
-Set the `isBordered`* property to true in IB or instantiate with the `border` style programmatically.
+- SECONDARY
+- Set the `isBordered`* property to true in IB or instantiate with the `border` style programmatically.
 
-PLAIN
-Set the `isPlain`* property to true in IB or instantiate with the `plain` style programmatically.
+- PLAIN
+- Set the `isPlain`* property to true in IB or instantiate with the `plain` style programmatically.
 
-DESTRUCTIVE
-Set the `isDestructive`* property to true in either IB or programmatically. Destructive is not a style like the others, because a destructive button can be either `primary`, `secondary` or `plain` styled.
+- DESTRUCTIVE
+- Set the `isDestructive`* property to true in either IB or programmatically. Destructive is not a style like the others, because a destructive button can be either `primary`, `secondary` or `plain` styled.
 
 
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
