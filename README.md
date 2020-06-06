@@ -5,7 +5,6 @@ Button Kit by 44 is a flexible and easy-to-use toolbox for both designers and iO
 The symbols in the Sketch document is designed to be copied into your project and manually edited from there. The Swift code is designed to be used as-is, without changes. It is possible to break off and extend it as your own code, but if so, no future updates will be supported.
 
 
-s
 # Quick-start guide
 
 ## As a Designer 👇
