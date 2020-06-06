@@ -1,75 +1,69 @@
-# Buttons Kit by 44
+# Button kit for Sketch + Swift.
 
-An easy to use collection of buttons for both designers and iOS developers. As a designer you get a Sketch document with symbols for the common button variations. As a developer you get a toolkit written in Swift that supports the a vast variety of modern UI patterns. Since both designers and developers gets editable versions (symbols and code), you can view this kit as a starting point for further development through your own extensions, should you want to.  
+Button Kit by 44 is a flexible and easy-to-use toolbox for both designers and iOS developers. As a designer you get a Sketch document with ready-to-use and code-backed symbols for modern button designs. As a developer you get a Swift Package that lets you implement designs without having to write tedious boiler-plate or reinvent wheels.
+
+The symbols in the Sketch document is designed to be copied into your project and manually edited from there. The Swift code is designed to be used as-is, without changes. It is possible to break off and extend it as your own code, but if so, no future updates will be supported.
+
 
 
 # Quick-start guide
 
-## For Designers
+## As a Designer 👇
 
-- Download the Sketch file
-- Add buttons as symbols to your Sketch documents
+1. Download the Sketch file
 
-## For Developers
+2. Start adding the symbols to your Sketch documents
 
-- Add the Swift Package dependency through Xcode from `https://github.com/tobberacing/ButtonsKit.git`
-- Use the `Button` class either through IB or programmatically 
+## As a Developer 👇
 
+1. Add the Swift Package dependency through Xcode from https://github.com/tobberacing/ButtonsKit.git
 
-# Designers
-
-The Sketch file contains symbols for primary, secondary, plain and destructive buttons, ready to be thrown in to your project, resting assured that your developers won’t need to build anything from scratch.
-
-The symbols include designs for four different styles, with five different layouts and two sizes each. All buttons include a spinner state.
-
-
-## 1. Styles
-
-![Available button styles](/Documentation/1.png)
-
-Buttons come in four main styles. A primary filled version, a secondary bordered, a plain with only text and a destructive one.
-
-
-## 2. Layouts
-
-![Available button styles](/Documentation/2.png)
-
-Each style supports five different layouts for different purposes. Two for additional detail, one with an icon and a spinner state.
-
-View the Sketch symbols either as a complete package, or as a starting point. It’s up to you guys. Since the developer gets all the source code, any tweaks you make to the designs will be pretty easy to implement in code.
-
-Download the Sketch file to get started.
-
-
-## 3. Sizes
-
-![Available button styles](/Documentation/3.png)
-
-There are two sizes, regular and small. It's generally a good idea to keep two distinct button sizes. Of course you can tweak the size as you see fit, and your developer can easily update the height of the 'Regular' and 'Small' size. You could also add a third size should you choose to, and your developer will be able to implement that easily too. 
-
-The default heights are `50` and `40` points.
+2. Use the Button class either through IB or programmatically
 
 
 
-# Developers
 
-The kit comes in a Swift Package with a single class that supports all variations of the design. Since you get all the source code, you can implement any tweaks you need.
+**********************************************************************************************************************************
 
-Instantiate a button to your project either by placing a view in Interface Builder and changing its class to `Button`, or programmatically through 👇
+# Full documentation
+
+## Full documentation along with code examples can be found at 👇
+## tobiasrenstrom.com/portfolio/button-kit   <<<<<<<<<<<<<<<<<<<
+
+
+**********************************************************************************************************************************
+
+
+
+# How to use
+
+The kit comes in a Swift Package with a single class that supports all variations available from the Sketch designs. Should you and your designer want to extend the code, it is possible to simply copy/paste the whole `Button` class and make it your own. If so, just note that no future updates will be supported. You can also write your own extensions or your own subclasses, just note that those might break - even though updates try to mitigate that. The spirit of this kit is to use the code as-is.
+
+Instantiate a button to your project either by placing a view in Interface Builder and changing its class to `Button`. Or programmatically through either 👇
 
 ````
-public convenience init(width: CGFloat, color: UIColor?, style: Button.Style?, size: Button.Size?)
-````
-or the quicker convenience init👇 
-
-````
-public convenience init(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?)
+let defaultButton = Button(width: 200, color: nil, style: nil, size: nil)
 ````
 
-You can edit the appearance of buttons either directly in Interface Builder or programmatically. The things you can tweak include 👇
+Or the recommendeded, quicker convenience init that also takes a text and selectionBlock👇
+
+````
+let defaultButton = Button(width: 200, text: "Done", color: nil, style: nil, size: nil) {
+
+    // code
+}
+````
+
+Wherever you use the `Button` class programmatically, you need to import the `ButtonKit` module.
+
+````
+import ButtonKit
+````
+Edit the appearance of buttons either directly in Interface Builder or programmatically. The things you can tweak include 👇
 
 * Text (duh)
 * Detail text
+* Color
 * Icon
 * Text color
 * Border color
@@ -79,202 +73,142 @@ You can edit the appearance of buttons either directly in Interface Builder or p
 * Size - regular or small
 * Style - Filled, bordered, plain or destructive
 * Layout - Regular, detail in center, detail to the right, icon
+* These parameters make the Button class highly customizable.
 
-These parameters makes the `Button` class highly customisable.
 
 
-## 1. Styles
+# Styles
 
-![Available button styles](/Documentation/1.png)
+PRIMARY
+Requries no action in IB, instantiate with `nil` for the style parameter programmatically.
 
-### Primary
-Requries no action in IB, instantiate with nil for the style parameter programmatically.
+SECONDARY
+Set the `isBordered`* property to true in IB or instantiate with the `border` style programmatically.
 
-### Secondary
-Set the `isBordered`* property to true in IB or instantiate with the bordered style programmatically.
+PLAIN
+Set the `isPlain`* property to true in IB or instantiate with the `plain` style programmatically.
 
-### Plain
-Set the `isPlain`* property to true in IB or instantiate with the plain style programmatically.
+DESTRUCTIVE
+Set the `isDestructive`* property to true in either IB or programmatically. Destructive is not a style like the others, because a destructive button can be either `primary`, `secondary` or `plain` styled.
 
-### Destructive
-Set the `isDestructive`* property to true in IB or instantiate with the destructive style programmatically.
 
 *Since @IBInspectable doesn’t support enums, or any type of arrays, the style settings in Interface Builder needs to be boolean values, unfortunately.
 
 
-## 2. Layouts
 
-![Available button styles](/Documentation/2.png)
+# Layouts
 
-### Regular
-The default layout. 
+REGULAR
+The default layout.
 
-### detailRight
+DETAIL RIGHT
 Set the `detailText` property in either IB or programmatically.
 
-### detailCenter
+DETAIL CENTER
 Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
 
-### Icon
+ICON
 Specify an icon image with a `UIImage` object. This overrides any `detailText`. Set it in either IB or programmatically.
 
-### Spinner
+CIRCLE
+Use the convenience init that takes a `diameter`.
+
+SPINNER
 Call `startSpinner()` to enter spinner mode. `stopSpinner()` exits.
 
 
-## 3. Sizes
 
-![Available button styles](/Documentation/3.png)
+# Sizes
 
-There are two sizes, regular and small. The `isSmallSize` property creates a small sized button. Either through Interface Builder or programmatically. 
+There are two sizes, `regular` and `small`. To create a small sized button, either use the `Size` value when instantiating programmatically, or use the `isSmallSize` property through Interface Builder.
 
-The default heights are `50` and `40` points. In case your designer wants to change those values, you can make the changes in the `Size` enum. All buttons in the project will adjust their frame height.
+The default heights are `50` and `40` points. In case your designer wants to change those values, you can make the changes during app loading, for example in your App Delegate, using the `regularHeight` and `smallHeight` settings. All buttons in the project will adjust their frame height.
+
+In order to help keep a coherent and consistent UI across your app, this can not be set per-button. The exception is circle buttons that can have any `diameter` you define.
 
 ````
-public enum Size: CGFloat {
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    case regular = 50.0 // Change to update regular height
-    case small = 40.0 // Change to update small height
+    Button.regularHeight = 44
+    Button.smallHeight = 30
+    
+    return true
 }
 ````
 
-To implement a third size, simply add another case, for example `mini` with `30` as value. Just note that this won't be supported in Interface Builder, only programmatically.
+
+# Shadows
+
+Shadows can be added to buttons (that has a solid background color) with custom values for `color`, `opacity`, `offset` and `radius`. Work with your designer to find the right values. Some tweaking will be needed as Sketch and iOS renders shadows a little differently. Read more about these differences here. https://medium.com/@nathangitter/why-your-app-looks-better-in-sketch-3a01b22c43d7
+
+````
+defaultButton.shadowColor = UIColor.darkGray
+defaultButton.shadowOpacity = 0.2
+defaultButton.shadowOffset = CGSize(width: 0, height: 6)
+defaultButton.shadowRadius = 9
+````
 
 
-## 4. Adding an action
+# Updating values
+
+The recommended way to update the text, detail text and icon image is to change the values on the `Button` object directly. Avoid accessing the underlying `UILabel` or `UIImageView` objects. Whenever one of the properties stored on the `Button` (`text`, `textColor`, `detailText`...) is changed, a style update is triggered to reflect that update. But since this style update uses values stored on the button itself, any values set directly on the underlying `UILabel` or `UIImageView` will be reverted back again and lost.
+
+Here’s some of the properties you can change directly on the `Button` object. Have a look in the code to see wether more has been added since this part of the documentation was written.
+
+````
+public var color: UIColor?
+public var text: String
+public var detailText: String?
+public var iconImage: UIImage?
+public var textColor: UIColor?
+public var borderColor: UIColor?
+public var borderWidth: CGFloat
+public var shadowOpacity: Float
+public var shadowColor: UIColor
+public var shadowOffset: CGSize
+public var shadowRadius: CGFloat
+public var cornerRadius: CGFloat
+public var edgePadding: CGFloat
+public var isFeedbackEnabled: Bool
+````
+
+
+# Adding an action
 
 Actions can be implemented either by using the `selectionBlock` or by setting a delegate. Blocks are the recommended easiest way.
 
 ````
 defaultButton.selectionBlock = {
 
-    print("did tap button")
+    // code
 }
 ````
 
-Set the `selectionDelegate` property on the button and implement the `ButtonSelectionDelegate` protocol to add a delegate for call-backs. The `selectionDelegate can also be set through Interface Builder.
+To instead add a delegate for call-backs, set the `selectionDelegate` property on the button and implement the `ButtonSelectionDelegate` protocol. The `selectionDelegate` can also be set through Interface Builder.
+
+````
+defaultButton.selectionDelegate = self
+````
 
 ````
 extension ViewController: ButtonSelectionDelegate {
 
     func didTapButton(_ button: Button) {
         
-        print("didTapButton")
+        // code
     }
 }
 ````
 
-````
-defaultButton.selectionDelegate = self
-````
 
+# Gobal Settings
 
-
-# Getting the Code
-
-![Available button styles](/Documentation/4.png)
-
-The code comes in a Swift Package. In Xcode, select `File` -> `Swift Packages` -> `Add Packade Depency…`
-
-The Package Repository is located at 👇
-
-`https://github.com/tobberacing/ButtonsKit.git`
-
-This will download and add the source code to your project in a `ButtonsKit` module.
-
-
-
-
-# Examples
-
-![Available button styles](/Documentation/5.png)
-
-For a simple button with regular size and regular layout, only a width is needed to init. `text`, `selectionBlock` and other parameters can be set later.
+To help keep coherent and consistent UI across your app, a lot of settings can be defined as global defaults through static properties. These affects all buttons, unless another value is set for a specific button. Settings include fonts, destructive color, heights and corner radius. Tweak the values as you guys see fit.
 
 ````
-let defaultButton = Button(width: 200, color: nil, style: nil, size: nil)
+static public var defaultColor = UIColor(hex: "293440") // overridable in instances by setting specific color
+static public var defaultTextColor: UIColor? // overridable in instances by setting specific textColor
 
-defaultButton.text = "Done"
-````
-
-A quicker init function lets you specify both `text` and the `selectionBlock` at creation. This lets you create a more complete button, with one line of code, that still allows a lot of flexibility.  
-
-````
-let defaultButton = Button(width: 200, text: "Done", color: nil, style: nil, size: nil) {
-
-    print("didSelect")
-
-}
-````
-
-
-
-![Available button styles](/Documentation/6.png)
-
-To turn this regular layout into one with a detail text in left/right layout, set the `detailText` property.
-
-````
-let defaultButton = Button(width: 200, text: "Publish", color: nil, style: nil, size: nil) {
-
-    print("didSelect")
-
-}
-
-defaultButton.detailText = "Global"
-````
-
-
-![Available button styles](/Documentation/7.png)
-
-To create a button with detail text but a centerred layout, also set the `isCenterred` property.
-
-````
-let defaultButton = Button(width: 200, text: "Purchase", color: nil, style: nil, size: nil) {
-
-    print("didSelect")
-
-}
-
-defaultButton.detailText = "30 days free trial"
-defaultButton.isCenterred = true
-````
-
-
-![Available button styles](/Documentation/8.png)
-
-To create a button with an icon and left/right layout, set the `iconImage` with a `UIImage` object.
-
-````
-let defaultButton = Button(width: 200, text: "Refresh", color: nil, style: nil, size: nil) {
-
-    print("didSelect")
-
-}
-
-defaultButton.iconImage = UIImage(named: "Refresh white")
-````
-
-![Available button styles](/Documentation/9.png)
-
-To create a destructive button, set the `isDestructive` to `true`.
-
-````
-let defaultButton = Button(width: 200, text: "Delete", color: nil, style: nil, size: nil) {
-
-    print("didSelect")
-
-}
-
-defaultButton.isDestructive = true
-````
-
-
-# Global Settings
-
-
-To keep coherent styling across all buttons in your project, some settings are defined as `static`. This includes fonts, destructive color and iconSize. Corner radius will be overriden if a static property is set. Tweak these values as you guys see fit.
-
-````
 static public var destructiveColor = UIColor(hex: "FB0002")
 static public var destructiveTextColor = UIColor(hex: "FFFFFF")
 
@@ -288,22 +222,22 @@ static public let smallCenterredDetailFont = UIFont.systemFont(ofSize: 10, weigh
 
 static public let iconSize = CGSize(width: 30, height: 30)
 
-static public let regularCornerRadius: CGFloat?
-static public let smallCornerRadius: CGFloat?
+static public var regularCornerRadius: CGFloat?
+static public var smallCornerRadius: CGFloat?
 ````
 
-A default color can be set per-button. It will be used for text, fill and borders when no values have been explicitly set.
+Set these values somewhere during your app loading, before displaying any views. For example in your App Delegate or similar.
 
 ````
-public var defaultColor = UIColor(hex: "293440") // overridable in instances by setting individual colors
-````
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-Sizes can be changed across all buttons in your project by tweaking the `Size` enum values.
+    Button.defaultColor = UIColor.black
+    Button.defaultTextColor = UIColor.white
+    Button.smallCornerRadius = 1
+    Button.regularCornerRadius = 5
+    Button.destructiveColor = UIColor.red
+    Button.destructiveTextColor = UIColor.white
 
-````
-public enum Size: CGFloat {
-
-    case regular = 50.0 // Change to update regular height
-    case small = 40.0 // Change to update small height
+    return true
 }
 ````
