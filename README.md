@@ -1,4 +1,4 @@
-# Button kit for Sketch + Swift.
+# ButtonKit for Sketch + Swift.
 
 Button Kit by 44 is a flexible and easy-to-use toolbox for both designers and iOS developers. As a designer you get a Sketch document with ready-to-use and code-backed symbols for modern button designs. As a developer you get a Swift Package that lets you implement designs without having to write tedious boiler-plate or reinvent wheels.
 
