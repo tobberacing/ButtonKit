@@ -95,23 +95,17 @@ Edit the appearance of buttons either directly in Interface Builder or programma
 
 # Layouts
 
-REGULAR
-The default layout.
+- `regular` 👉 The default layout.
 
-DETAIL RIGHT
-Set the `detailText` property in either IB or programmatically.
+- `detailRight` 👉 Set the `detailText` property in either IB or programmatically.
 
-DETAIL CENTER
-Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
+- `detailCenter` 👉 Set the `detailText` property and the `isCenterred` property to true in either IB or programmatically.
 
-ICON
-Specify an icon image with a `UIImage` object. This overrides any `detailText`. Set it in either IB or programmatically.
+- `icon` 👉 Specify an icon image with a `UIImage` object. This overrides any `detailText`. Set it in either IB or programmatically.
 
-CIRCLE
-Use the convenience init that takes a `diameter`.
+- `circle` 👉 Use the convenience init that takes a `diameter`.
 
-SPINNER
-Call `startSpinner()` to enter spinner mode. `stopSpinner()` exits.
+- `spinner` 👉 Call `startSpinner()` to enter spinner mode. `stopSpinner()` exits.
 
 
 
