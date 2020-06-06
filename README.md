@@ -27,8 +27,9 @@ The symbols in the Sketch document is designed to be copied into your project an
 
 # Full documentation
 
-## Full documentation along with code examples can be found at 👇
-## tobiasrenstrom.com/portfolio/button-kit   <<<<<<<<<<<<<<<<<<<
+## Full documentation along with code examples can be found at 👇 
+
+👉  https://www.tobiasrenstrom.com/portfolio/button-kit 
 
 
 **********************************************************************************************************************************
