@@ -1,12 +1,12 @@
 import XCTest
-@testable import ButtonsKit
+@testable import ButtonKit
 
-final class ButtonsKitTests: XCTestCase {
+final class ButtonKitTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        //XCTAssertEqual(ButtonsKit().text, "Hello, World!")
+        //XCTAssertEqual(ButtonKit().text, "Hello, World!")
     }
 
     static var allTests = [

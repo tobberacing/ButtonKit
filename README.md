@@ -16,7 +16,7 @@ The symbols in the Sketch document is designed to be copied into your project an
 
 ## As a Developer 👇
 
-1. Add the Swift Package dependency through Xcode from https://github.com/tobberacing/ButtonsKit.git
+1. Add the Swift Package dependency through Xcode from https://github.com/tobberacing/ButtonKit.git
 
 2. Use the Button class either through IB or programmatically
 
@@ -240,6 +240,6 @@ The code comes in a Swift Package. In Xcode, select `File -> Swift Packages -> A
 
 The Package Repository is located at 👇
 
-https://github.com/tobberacing/ButtonsKit.git
+https://github.com/tobberacing/ButtonKit.git
 
 This will download and add the source code to your project in a `ButtonKit` module.
