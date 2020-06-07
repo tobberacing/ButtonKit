@@ -55,21 +55,21 @@ public class Button: UIView {
     static public var destructiveTextColor = UIColor(hex: "FFFFFF")
     
     /** Global setting. The font you are using for regular sized buttons. */
-    static public let regularFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+    static public var regularFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
     /** Global setting. The font you are using for small sized buttons. */
-    static public let smallFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+    static public var smallFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
     
     /** Global setting. The font you are using for detail text on regular sized button with the regular right aligned layout. */
-    static public let regularDetailFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+    static public var regularDetailFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
     /** Global setting. The font you are using for detail text on small sized button with the regular right aligned layout. */
-    static public let smallDetailFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
+    static public var smallDetailFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
     /** Global setting. The font you are using for detail text on regular sized button with the centerred layout. */
-    static public let regularCenterredDetailFont = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
+    static public var regularCenterredDetailFont = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
     /** Global setting. The font you are using for detail text on small sized button with the centerred layout. */
-    static public let smallCenterredDetailFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
+    static public var smallCenterredDetailFont = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
     
     /** Global setting. The size you are using for icons from your designer. */
-    static public let defaultIconSize = CGSize(width: 30, height: 30)
+    static public var defaultIconSize = CGSize(width: 30, height: 30)
     
     /** Global setting. The corner radius for regular sized buttons. */
     static public var regularCornerRadius: CGFloat = 5.0
