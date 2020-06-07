@@ -12,7 +12,7 @@ import UIKit
 public class Spinner: UIView {
 
     public var isAnimating: Bool = false
-    private var dotDiameter: CGFloat = 7.0
+    public var dotDiameter: CGFloat = 7.0
     
     public var color: UIColor = UIColor.clear { didSet { updateColors() } }
     
