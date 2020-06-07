@@ -27,12 +27,11 @@ public class Spinner: UIView {
         self.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.clipsToBounds = false
         self.color = color
+        self.initDots()
     }
     
     private func initDots() {
     
-        self.initDots()
-        
         let centerOne = CGPoint(x: -dotDiameter/2, y: self.bounds.midY)
         let centerTwo = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         let centerThree = CGPoint(x: self.bounds.maxX + dotDiameter/2, y: self.bounds.midY)
@@ -70,6 +69,10 @@ public class Spinner: UIView {
         let duration: Double = 0.600
         let interval: CGFloat = 0.200
         let scale: CGFloat = 0.500
+        
+        self.one.bounds.size = CGSize(width: dotDiameter, height: dotDiameter)
+        self.two.bounds.size = CGSize(width: dotDiameter, height: dotDiameter)
+        self.three.bounds.size = CGSize(width: dotDiameter, height: dotDiameter)
         
         for (dotNumber, dot) in [one, two, three].enumerated() {
         
