@@ -27,12 +27,12 @@ public class Spinner: UIView {
         self.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.clipsToBounds = false
         self.color = color
-        self.initDots()
-    
     }
     
     private func initDots() {
     
+        self.initDots()
+        
         let centerOne = CGPoint(x: -dotDiameter/2, y: self.bounds.midY)
         let centerTwo = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         let centerThree = CGPoint(x: self.bounds.maxX + dotDiameter/2, y: self.bounds.midY)
@@ -51,7 +51,6 @@ public class Spinner: UIView {
         self.addSubview(three)
         
         self.isHidden = true
-    
     }
     
     private func updateColors() {
@@ -59,7 +58,6 @@ public class Spinner: UIView {
         self.one.fillColor = color
         self.two.fillColor = color
         self.three.fillColor = color
-    
     }
     
     public func startAnimating() {
@@ -84,11 +82,8 @@ public class Spinner: UIView {
                     dot?.transform = CGAffineTransform.identity
                 
                 }, completion: nil)
-            
             }
-        
         }
-    
     }
     
     public func stopAnimating() {
@@ -100,11 +95,9 @@ public class Spinner: UIView {
         
             dot?.layer.removeAllAnimations()
             dot?.transform = CGAffineTransform.identity
-        
         }
-    
     }
-
+    
 }
 
 
@@ -121,7 +114,6 @@ class Circle: UIView {
         self.center = center
         
         self.fillColor = fill
-    
     }
     
     override func draw(_ rect: CGRect) {
@@ -130,7 +122,6 @@ class Circle: UIView {
         
         fillColor.setFill()
         UIBezierPath(ovalIn: rect).fill()
-    
     }
-
+    
 }
