@@ -681,8 +681,6 @@ public class Button: UIView {
         
         selectionDelegate?.didTapButton(self)
         selectionBlock?()
-        
-        startSpinner()
 
     }
 
