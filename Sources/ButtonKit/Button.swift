@@ -39,7 +39,7 @@ public class Button: UIView {
     
     private var debugMode: Bool = false
     
-    private var spinner: Spinner!
+    public var spinner: Spinner!
     
     
     // MARK: - Global Settings (affects all buttons in project)
