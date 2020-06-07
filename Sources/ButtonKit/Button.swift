@@ -27,7 +27,7 @@ public class Button: UIView {
     /** The `UIimageView` displaying icon image.*/
     public var imageView = UIImageView()
     /** The code block that runs on tapping the button. */
-    public var selectionBlock: (() -> Void)?
+    public var selectionBlock: ((_ button: Button) -> Void)?
     
     private var tapRecognizer: UITapGestureRecognizer!
     private var defaultTransform: CGAffineTransform?
@@ -227,7 +227,7 @@ public class Button: UIView {
     - parameter block: The selection block that will be called when the user taps the button.
        
     */
-    public convenience init(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?) {
+    public convenience init(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: ((_ button: Button) -> Void)?) {
     
         self.init()
         
@@ -244,7 +244,7 @@ public class Button: UIView {
     - parameter block: The selection block that will be called when the user taps the button.
        
     */
-    public convenience init(diameter: CGFloat, iconImage: UIImage?, color: UIColor?, style: Button.Style?, block: (() -> Void)?) {
+    public convenience init(diameter: CGFloat, iconImage: UIImage?, color: UIColor?, style: Button.Style?, block: ((_ button: Button) -> Void)?) {
     
         self.init()
         
@@ -256,7 +256,7 @@ public class Button: UIView {
         self.didInit(width: diameter, text: nil, color: color, style: style, size: nil, block: block)
     }
     
-    private func didInit(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: (() -> Void)?) {
+    private func didInit(width: CGFloat, text: String?, color: UIColor?, style: Button.Style?, size: Button.Size?, block: ((_ button: Button) -> Void)?) {
     
         self.text = text ?? ""
         
@@ -680,7 +680,7 @@ public class Button: UIView {
         guard !self.spinner.isAnimating else { stopSpinner(); return }
         
         selectionDelegate?.didTapButton(self)
-        selectionBlock?()
+        selectionBlock?(self)
 
     }
 
@@ -690,7 +690,7 @@ public class Button: UIView {
         
         self.tapBegan()
         
-        selectionBlock?()
+        selectionBlock?(self)
         startSpinner()
         
         Dispatch.main(after: 0.100) {
