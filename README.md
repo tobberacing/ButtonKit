@@ -9,7 +9,7 @@ The symbols in the Sketch document is designed to be copied into your project an
 
 ## As a Designer 👇
 
-1. Download the Sketch file
+1. Download the Sketch file from https://github.com/tobberacing/Files/raw/master/ButtonKit.sketch
 
 2. Start adding the symbols to your Sketch documents
 
