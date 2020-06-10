@@ -29,6 +29,9 @@ public class Button: UIView {
     /** The code block that runs on tapping the button. */
     public var selectionBlock: ((_ button: Button) -> Void)?
     
+    private var target: AnyObject?
+    private var selector: Selector?
+    
     private var tapRecognizer: UITapGestureRecognizer!
     private var defaultTransform: CGAffineTransform?
     private var isDisplayingFeedback: Bool = false
@@ -681,7 +684,18 @@ public class Button: UIView {
         
         selectionDelegate?.didTapButton(self)
         selectionBlock?(self)
+        
+        guard let target = target, let selector = selector else { return }
+        
+        let _ = target.perform(selector)
 
+    }
+    
+    public func addTarget(_ target: AnyObject, selector: Selector) {
+    
+        self.target = target
+        self.selector = selector
+    
     }
 
     public func simulateTap() {
