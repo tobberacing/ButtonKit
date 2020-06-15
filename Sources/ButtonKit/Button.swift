@@ -90,12 +90,6 @@ public class Button: UIView {
     static public var smallHeight: CGFloat = 40.0
     
     
-    // Turn these into overridable defaults
-    // -. Border width
-    // -. Edge padding
-    // 3. Icon Size
-    
-    
     // MARK: - Style Settings
     
     
@@ -134,7 +128,7 @@ public class Button: UIView {
     /** The size of the icon image. If nil, the default icon size will be used instead.*/
     public var iconSize: CGSize?
     
-    /** Set `isFeedbackEnabled` to prevent scale and color animations on tap.*/
+    /** Set `isFeedbackEnabled` to `false` to prevent scale and color animations on tap.*/
     @IBInspectable public var isFeedbackEnabled: Bool = true { didSet { updateViews() } }
     
     
