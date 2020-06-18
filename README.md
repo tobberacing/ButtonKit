@@ -165,10 +165,25 @@ public var isFeedbackEnabled: Bool
 
 # Adding an action
 
-Actions can be implemented either by using the `selectionBlock` or by setting a delegate. Blocks are the recommended easiest way.
+Actions can be implemented either by using the `selectionBlock`, using a `target`/`selector` pattern or by setting a `delegate`. Blocks are the recommended easiest way.
 
 ````
 defaultButton.selectionBlock = {
+
+    // code
+}
+````
+
+Use a `target`/`selector` pattern by using the `addTarget` function.
+
+````
+button.addTarget(self, selector: #selector(didSelect))
+````
+
+Point the `selector` to an `@objc` function to be called.
+
+````
+@objc func didSelect() {
 
     // code
 }
