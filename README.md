@@ -168,7 +168,7 @@ public var isFeedbackEnabled: Bool
 Actions can be implemented either by using the `selectionBlock`, using a `target`/`selector` pattern or by setting a `delegate`. Blocks are the recommended easiest way.
 
 ````
-defaultButton.selectionBlock = {
+defaultButton.selectionBlock = { button in
 
     // code
 }
@@ -177,7 +177,7 @@ defaultButton.selectionBlock = {
 Use a `target`/`selector` pattern by using the `addTarget` function.
 
 ````
-button.addTarget(self, selector: #selector(didSelect))
+defaultButton.addTarget(self, selector: #selector(didSelect))
 ````
 
 Point the `selector` to an `@objc` function to be called.
