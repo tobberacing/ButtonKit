@@ -122,7 +122,7 @@ public class Button: UIView {
     
     /** The corner radius of edges. Overrides any default values.*/
     @IBInspectable public var cornerRadius: CGFloat = -1.0 { didSet { updateViews() } } // @IBInspectable doesn't support optional CGFloat. Negative means not set.
-    /** The edge padding for left/right aligned layouts. Overrides any default values.*/
+    /** The left/right edge padding for labels and icons. Overrides any default values.*/
     @IBInspectable public var edgePadding: CGFloat = -1.0 { didSet { updateViews() } } // @IBInspectable doesn't support optional CGFloat. Negative means not set.
     
     /** The size of the icon image. If nil, the default icon size will be used instead.*/
