@@ -140,7 +140,6 @@ public class Button: UIView {
     @IBInspectable public var isBordered: Bool = false { didSet { updateViews() } }
     @IBInspectable public var isPlain: Bool = false { didSet { updateViews() } }
     @IBInspectable public var isCenterred: Bool = false { didSet { updateViews() } }
-    @IBInspectable public var isSquare: Bool = false { didSet { updateViews() } }
     @IBInspectable public var isCircle: Bool = false { didSet { updateViews() } }
     
     
