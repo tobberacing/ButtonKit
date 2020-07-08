@@ -47,6 +47,7 @@ public class Button: UIView {
     
     // MARK: - Global Settings (affects all buttons in project)
     
+    
     /** Global setting. The color of your defualt buttons. Overridable on instances by setting specific color. */
     static public var defaultColor = UIColor(hex: "293440")
     /** Global setting. The color of your defualt button texts. Overridable on instances by setting specific color. */
@@ -93,7 +94,7 @@ public class Button: UIView {
     // MARK: - Style Settings
     
     
-    /** The color of the background for `filled` styled buttons, or the border and text for `border`  styled buttons.*/
+    /** The color of the background for `filled` styled buttons, or the border and text for `border` styled buttons.*/
     @IBInspectable public var color: UIColor? { didSet { updateViews() } }
     
     /** The text displayed on the main `label`.*/
@@ -213,7 +214,7 @@ public class Button: UIView {
     }
     
     /**
-    Creates a button with defined width, text, color, style and size and selection block.
+    Creates a button with defined width, text, color, style, size and selection block.
     -
     - parameter width: The width of the buttons frame. Can be changed or animated afterwards too. It will however revert back to this value if the button style is updated.
     - parameter text: The title text displayed on the button.
@@ -231,7 +232,7 @@ public class Button: UIView {
     }
     
     /**
-    Creates a circle shaped button with defined diameter, icon image, color and style. The diameter can be whatever value you want.
+    Creates a circle shaped button with defined diameter, icon image, color and style. The diameter can be as big as you want.
     -
     - parameter diameter: Will be used as the width of the buttons frame.
     - parameter iconImage: The icon image will be displayed centerred in the circle.
@@ -673,7 +674,7 @@ public class Button: UIView {
 
     @objc private func didTap() {
 
-        guard !self.spinner.isAnimating else { stopSpinner(); return }
+        guard !self.spinner.isAnimating else { return }
         
         selectionDelegate?.didTapButton(self)
         selectionBlock?(self)
@@ -681,14 +682,12 @@ public class Button: UIView {
         guard let target = target, let selector = selector else { return }
         
         let _ = target.perform(selector)
-
     }
     
     public func addTarget(_ target: AnyObject, selector: Selector) {
     
         self.target = target
         self.selector = selector
-    
     }
 
     public func simulateTap() {
@@ -700,10 +699,7 @@ public class Button: UIView {
         selectionBlock?(self)
         startSpinner()
         
-        Dispatch.main(after: 0.100) {
-            self.tapEnded()
-        }
-
+        Dispatch.main(after: 0.100) { self.tapEnded() }
     }
 }
 
