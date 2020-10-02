@@ -306,7 +306,7 @@ public class Button: UIView {
     
         guard spinner == nil else { return }
         
-        self.spinner = Spinner(color: self.updatedTextColor)
+        self.spinner = Spinner(color: self.updatedTextColor, size: self.isSmallSize ? .small : .regular)
         self.spinner.center = CGPoint(x: bounds.midX, y: bounds.midY)
         self.spinner.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin]
         self.addSubview(spinner)

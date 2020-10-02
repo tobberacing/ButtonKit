@@ -12,7 +12,8 @@ import UIKit
 public class Spinner: UIView {
 
     public var isAnimating: Bool = false
-    public var dotDiameter: CGFloat = 7.0
+    
+    public var size: Spinner.Size = .regular
     
     public var color: UIColor = UIColor.clear { didSet { updateColors() } }
     
@@ -21,12 +22,20 @@ public class Spinner: UIView {
     private var three: Circle!
     
     
-    convenience init(color: UIColor) {
+    public enum Size {
+    
+        case regular
+        case small
+    }
+    
+    
+    convenience init(color: UIColor, size: Spinner.Size) {
     
         self.init()
         self.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.clipsToBounds = false
         self.color = color
+        self.size = size
         self.initDots()
     }
     
@@ -50,6 +59,11 @@ public class Spinner: UIView {
         self.addSubview(three)
         
         self.isHidden = true
+    }
+    
+    private var dotDiameter: CGFloat {
+    
+        return self.size == .regular ? 7.0 : 5.0
     }
     
     private func updateColors() {
